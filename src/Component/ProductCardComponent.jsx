@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import image from './samsung.jpg'
 
 class ProductCardComponent extends Component {
     render() {
@@ -15,10 +16,11 @@ class ProductCardComponent extends Component {
             },
             image: { width: '100%', height: '200px', display: 'block' }
         };
+        console.log(this.props.image);
         return (
             <div className="col-sm-6 col-md-4">
                 <div className="thumbnail" style={styles.thumbnail}>
-                    <img src={this.props.image} style={styles.image} alt="..." />
+                    <img src={image} style={styles.image} alt="..." />
                     <div className="caption">
                         <h3>{this.props.title}</h3>
                         <p>{this.props.description}</p>

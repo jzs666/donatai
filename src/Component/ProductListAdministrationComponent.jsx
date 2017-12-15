@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 
-class ProductListAdministrationComponent extends Component{
+class ProductListAdministrationComponent extends Component {
   render() {
-    var itemsHtml = this.props.products.map(function(item, index) {
+    var itemsHtml = this.props.products.map(function (item, index) {
       var url = '/admin/products/' + item.id;
       return (
         <tr key={index}>
           <td>{index + 1}</td>
-          <td><img src={item.image} style={{ width: '50px' }}/></td>
+          <td><img src={item.image} /></td>
           <td><Link to={url}>{item.title}</Link></td>
         </tr>
       );
@@ -36,4 +36,4 @@ ProductListAdministrationComponent.propTypes = {
   products: PropTypes.array.isRequired,
 };
 
-export default  ProductListAdministrationComponent;
+export default ProductListAdministrationComponent;

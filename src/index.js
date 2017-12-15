@@ -5,13 +5,14 @@ import './index.css';
 import ProductListContainer from './Container/ProductListContainer'
 import Product from './Container/ProductAdministrationContainer'
 import ProductDetailsContainer from './Container/ProductDetailsContainer'
-import {Router, Route, IndexRoute, hashHistory} from 'react-router'
+import ProductCartDetailsContainer from './Container/ProductCartDetailsContainer'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 
 
 var NoMatch = (props) => {
   return <div>Route did not match</div>;
-  };
+};
 
 
 ReactDOM.render(
@@ -20,11 +21,12 @@ ReactDOM.render(
       <IndexRoute component={ProductListContainer} />
       <Route path="/products" component={ProductListContainer} />
       <Route path="/admin/products/new" component={Product} />
-      <Route path="/products/:id" component={ProductDetailsContainer}/>
+      <Route path="/products/:id" component={ProductDetailsContainer} />
+      {/* <Route path="/cart-details" component={ProductCartDetailsContainer}/> */}
       {/* <Route path="/help" component={DemonstruotiNavigacija} /> */}
-      <Route path="*" component={NoMatch}/>
+      <Route path="*" component={NoMatch} />
     </Route>
 
- </Router>,
+  </Router>,
   document.getElementById('root')
 );

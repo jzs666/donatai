@@ -1,12 +1,13 @@
 import React from 'react'
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import image from './samsung.jpg'
 
 const ProductDetailsComponent=(props)=> {   
         return(
             <div>
                 <div className="media">
                     <div className="media-left">
-                        <img className="media-object" src={props.product.image} alt="..."/>
+                        <img className="media-object" src={image} alt="..."/>
                     </div>
                     <div className="media-body">
                         <h4 className="media-heading">{props.product.title}</h4>
