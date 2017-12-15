@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProductListComponent from '../Component/ProductListComponent'
+import CartSummaryComponent from '../Component/CartSummaryComponent'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -29,9 +29,7 @@ class ProductListContainer extends Component {
     console.log(this.state);
     return (
       <div>
-        <ProductListComponent
-          products={this.state.products}
-          onDetailsClick={this.handleDetailsClick} />
+        <CartSummaryComponent/>
           </div>
     )
   }

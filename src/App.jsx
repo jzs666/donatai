@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
-
+import {Link } from 'react-router'
+import CartSummaryContainer from './Container/CartSummaryContainer'
 // import MerchandiseList from './MerchandiseList/MerchandiseList';
 
 
 class App extends Component {
-
+  constructor(){
+    super();
+  }
+  
   render() {
     return (
       <div className="container">
@@ -25,12 +28,12 @@ class App extends Component {
                   </div>
                 </form>
                 <ul className="nav navbar-nav navbar-right">
-                  <li><Link to="/cart-details"><span className="glyphicon glyphicon glyphicon-shopping-cart"></span> {0} Items</Link></li>
+                  <li><Link to="/cart-details"><CartSummaryContainer/></Link></li>
                 </ul>
               </div>
             </nav>
-            {this.props.children}
           </div>
+          {this.props.children}
         </div>
       </div>
     );

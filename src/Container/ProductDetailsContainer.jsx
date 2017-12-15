@@ -20,15 +20,14 @@ class ProductDetailsContainer extends Component {
   }
 
   handleAddToCart() {
-    // var body = {
-    //   id: this.state.product.id,
-    //   image: this.state.product.image,
-    //   title: this.state.product.title
-    // };
+    var body = {
+      id: this.state.product.id,
+      image: this.state.product.image,
+      title: this.state.product.title
+    };
     // axios.post('/api/users/' + UserService.getUsername() + '/cart-products', body).then(function() {
-    //   EventEmitter.publish({ eventType: 'AddToCart' });
-    // });
-  }
+      axios.post('/api/users/cart-products', body).then(()=>{});
+   }
 
   handleBack() {
     return (this.context.router.goBack());

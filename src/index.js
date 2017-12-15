@@ -5,7 +5,8 @@ import './index.css';
 import ProductListContainer from './Container/ProductListContainer'
 import Product from './Container/ProductAdministrationContainer'
 import ProductDetailsContainer from './Container/ProductDetailsContainer'
-import ProductCartDetailsContainer from './Container/ProductCartDetailsContainer'
+import CartDetailsContainer from './Container/CartDetailsContainer'
+import CartSummaryContainer from './Container/CartSummaryContainer'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 
@@ -22,7 +23,8 @@ ReactDOM.render(
       <Route path="/products" component={ProductListContainer} />
       <Route path="/admin/products/new" component={Product} />
       <Route path="/products/:id" component={ProductDetailsContainer} />
-      {/* <Route path="/cart-details" component={ProductCartDetailsContainer}/> */}
+      <Route path="/cart-details" component={CartDetailsContainer}/>
+      {/* <Route path="/cart-details" component={CartDetailsContainer}/> */}
       {/* <Route path="/help" component={DemonstruotiNavigacija} /> */}
       <Route path="*" component={NoMatch} />
     </Route>

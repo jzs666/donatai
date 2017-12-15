@@ -1,35 +1,32 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import ProductCardComponent from './ProductCardComponent'
-
+import image from './samsung.jpg'
 
 class CartDetailsComponent extends Component {
     render() {
-        if (this.props.products.length !== 0) {
-            var productCards = this.props.products.map((product, index) => {
-                return (
-                    <ProductCardComponent
-                        key={index}
-                        id={product.id}
-                        image={"/samsung.jpg"}
-                        title={product.title}
-                        description={product.description}
-                        price={product.price}
-                        onDetailsClick={this.props.onDetailsClick} />
-                );
-            });
-            return (<div className="row">{productCards}</div>);
-        }
-        else {
-            return (<div> Laukiu duomenu </div>);
-        }
+        var itemsHtml = this.props.items.map(function (item, index) {
+            return (
+                <tr key={index}>
+                    <td><img className="media-object" src={image} style={{ width: '50px' }} /></td>
+                    <td>{item.title}</td>
+                    <td><button className="btn btn-danger" onClick={self.props.onItemRemove(item)}>Remove from cart</button></td>
+                </tr>
+            );
+        });
+        return (
+            <div>
+                <table className="table">
+                    <tbody>
+                        {itemsHtml}
+                    </tbody>
+                </table>
+            </div>);
     }
-
 }
-
 CartDetailsComponent.propTypes = {
-    products: PropTypes.array.isRequired,
-    onDetailsClick: PropTypes.func.isRequired,
+    items: PropTypes.array.isRequired,
+    onItemRemove: PropTypes.func.isRequired
 };
+
 
 export default CartDetailsComponent;
